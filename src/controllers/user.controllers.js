@@ -5,7 +5,7 @@ class UserController {
         const { body } = req;
         const input = {
             email: body.email,
-            preferredName: body.preferredName,
+            preferredFirstName: body.preferredFirstName,
             firstName: body.firstName,
             lastName: body.lastName,
             password: body.password
@@ -17,7 +17,7 @@ class UserController {
                 message: "Success"
             });
         } catch (error) {
-            res.status(500).json({ message: error });
+            res.status(500).json({ message: error.message });
         }
     };
 }
